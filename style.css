@@ -64,7 +64,9 @@
 }
 
 /* --- Global Reset --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -121,9 +123,9 @@ img {
   z-index: 100;
   padding: 0.9rem 0;
   transition: background-color 0.4s var(--ease-out),
-              border-color 0.4s var(--ease-out),
-              padding 0.3s ease,
-              box-shadow 0.3s ease;
+    border-color 0.4s var(--ease-out),
+    padding 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .header.scrolled {
@@ -177,7 +179,7 @@ img {
   -webkit-backdrop-filter: blur(14px);
   box-shadow: var(--shadow-sm);
   transition: background-color 0.4s var(--ease-out),
-              border-color 0.4s var(--ease-out);
+    border-color 0.4s var(--ease-out);
 }
 
 /* Sliding pill indicator */
@@ -191,8 +193,8 @@ img {
   border-radius: 30px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
   transition: transform 0.35s var(--ease-spring),
-              width 0.35s var(--ease-spring),
-              opacity 0.2s ease;
+    width 0.35s var(--ease-spring),
+    opacity 0.2s ease;
   pointer-events: none;
   z-index: 1;
 }
@@ -259,14 +261,17 @@ img {
   opacity: 0;
   transform: scale(0.5) rotate(-90deg);
 }
+
 [data-theme="dark"] .icon-moon {
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
+
 [data-theme="light"] .icon-sun {
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
+
 [data-theme="light"] .icon-moon {
   opacity: 0;
   transform: scale(0.5) rotate(90deg);
@@ -303,6 +308,7 @@ img {
 .mobile-toggle.open .bar:nth-child(1) {
   transform: translateY(3.5px) rotate(45deg);
 }
+
 .mobile-toggle.open .bar:nth-child(2) {
   transform: translateY(-3.5px) rotate(-45deg);
 }
@@ -377,7 +383,7 @@ img {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.6s var(--ease-out) var(--delay, 0s),
-              transform 0.6s var(--ease-out) var(--delay, 0s);
+    transform 0.6s var(--ease-out) var(--delay, 0s);
 }
 
 .reveal.visible .reveal-child {
@@ -488,8 +494,15 @@ img {
 }
 
 @keyframes pulse-ring {
-  0% { transform: scale(0.8); opacity: 1; }
-  100% { transform: scale(1.6); opacity: 0; }
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }
 
 .about-text-wrap {
@@ -718,6 +731,7 @@ img {
 .work-item.work-tall {
   grid-row: span 2;
 }
+
 .work-item.work-wide {
   grid-column: span 2;
 }
@@ -950,7 +964,7 @@ img {
   color: var(--text-main);
   outline: none;
   transition: border-color 0.25s ease, box-shadow 0.25s ease,
-              background-color 0.3s ease, color 0.3s ease;
+    background-color 0.3s ease, color 0.3s ease;
 }
 
 .simple-form input:focus,
@@ -1036,6 +1050,7 @@ img {
     opacity: 0;
     transform: scale(0.95) translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -1053,6 +1068,7 @@ img {
   cursor: pointer;
   transition: color 0.2s ease, transform 0.2s ease;
 }
+
 .lightbox-close:hover {
   color: #ffffff;
   transform: scale(1.15);
@@ -1070,11 +1086,13 @@ img {
   margin-top: 1.2rem;
   text-align: center;
 }
+
 .lightbox-caption h3 {
   font-size: 1.1rem;
   font-weight: 500;
   color: #f0f0f2;
 }
+
 .lightbox-caption p {
   font-size: 0.82rem;
   color: #9d9da6;
@@ -1101,6 +1119,7 @@ img {
   z-index: 3000;
   box-shadow: var(--shadow-md);
 }
+
 .toast.show {
   opacity: 1;
   transform: translateY(0);
@@ -1145,33 +1164,42 @@ img {
   .nav-wrapper {
     display: none;
   }
+
   .mobile-toggle {
     display: flex;
   }
+
   .about-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+
   .about-image {
     height: 380px;
   }
+
   .works-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.2rem;
   }
+
   .work-item.work-tall {
     grid-row: span 1;
   }
+
   .work-item.work-wide {
     grid-column: span 1;
   }
+
   .work-tall .work-img-box img {
     height: 380px;
   }
+
   .experience-row {
     grid-template-columns: 1fr;
     gap: 0.6rem;
   }
+
   .gear-row {
     grid-template-columns: 1fr;
     gap: 0.5rem;
@@ -1182,23 +1210,29 @@ img {
   .container {
     padding: 0 1.25rem;
   }
+
   .section {
     padding: 4.5rem 0;
   }
+
   .works-grid {
     grid-template-columns: 1fr;
   }
+
   .work-img-box img,
   .work-tall .work-img-box img {
     height: 280px;
   }
+
   .quick-contact-strip {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+
   .input-row {
     grid-template-columns: 1fr;
   }
+
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
