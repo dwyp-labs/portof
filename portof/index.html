@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,52 +7,97 @@
   <meta name="description" content="Portofolio fotografi Kresna Danuarta. Berbasis di Jakarta, fokus pada karya komersial, editorial, portrait, dan dokumentasi arsitektur.">
   <meta name="author" content="Kresna Danuarta">
 
-  <!-- Google Fonts: Plus Jakarta Sans (Clean Minimal Sans-Serif) -->
+  <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="header">
+  <!-- Floating Header -->
+  <header class="header" id="header">
     <div class="container header-inner">
       <a href="#about" class="logo">
         <span class="logo-name">Kresna Danuarta</span>
         <span class="logo-desc">Fotografer / Jakarta</span>
       </a>
 
-      <nav class="nav">
-        <a href="#about">Tentang</a>
-        <a href="#experience">Pengalaman</a>
-        <a href="#works">Karya</a>
-        <a href="#gear">Peralatan</a>
-        <a href="#contact" class="nav-contact-link">Kontak</a>
-      </nav>
+      <!-- Floating Pill Nav -->
+      <div class="nav-wrapper">
+        <nav class="nav" id="mainNav">
+          <div class="nav-indicator" id="navIndicator"></div>
+          <a href="#about" class="nav-link active" data-target="about">Tentang</a>
+          <a href="#experience" class="nav-link" data-target="experience">Pengalaman</a>
+          <a href="#works" class="nav-link" data-target="works">Karya</a>
+          <a href="#gear" class="nav-link" data-target="gear">Peralatan</a>
+          <a href="#contact" class="nav-link" data-target="contact">Kontak</a>
+        </nav>
+      </div>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema">
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
     </div>
   </header>
 
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-inner">
+      <nav class="mobile-nav">
+        <a href="#about" class="mobile-link">Tentang</a>
+        <a href="#experience" class="mobile-link">Pengalaman</a>
+        <a href="#works" class="mobile-link">Karya</a>
+        <a href="#gear" class="mobile-link">Peralatan</a>
+        <a href="#contact" class="mobile-link">Kontak</a>
+      </nav>
+      <p class="mobile-footer-text">Kresna Danuarta • Jakarta, Indonesia</p>
+    </div>
+  </div>
+
   <main>
-    <!-- 1. DATA DIRI & TENTANG SAYA (HUMAN & PERSONAL) -->
-    <section class="section about-section" id="about">
+    <!-- 1. TENTANG SAYA -->
+    <section class="section about-section reveal" id="about">
       <div class="container">
         <div class="about-grid">
           
-          <div class="about-image-wrap">
+          <div class="about-image-wrap reveal-child">
             <img 
               src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85" 
               alt="Potret Kresna Danuarta"
               class="about-image"
             >
             <div class="location-pill">
-              <span class="dot"></span>
+              <span class="dot-pulse"></span>
               Jakarta & sekitarnya • Tersedia untuk project
             </div>
           </div>
 
-          <div class="about-text-wrap">
+          <div class="about-text-wrap reveal-child" style="--delay: 0.15s">
             <span class="section-label">Tentang Saya</span>
             <h1 class="about-heading">
               Merekam manusia, ruang, dan cerita dengan cahaya alami dan pendekatan yang tenang.
@@ -70,7 +115,7 @@
               </p>
             </div>
 
-            <!-- Kontak Langsung Ringkas -->
+            <!-- Quick Contact -->
             <div class="quick-contact-strip">
               <div class="contact-entry">
                 <span class="entry-label">WhatsApp</span>
@@ -97,8 +142,8 @@
       </div>
     </section>
 
-    <!-- 2. PENGALAMAN & REKAM JEJAK (HUMAN & REALISTIC) -->
-    <section class="section experience-section" id="experience">
+    <!-- 2. PENGALAMAN -->
+    <section class="section experience-section reveal" id="experience">
       <div class="container">
         <div class="section-head">
           <span class="section-label">Pengalaman & Rekam Jejak</span>
@@ -110,7 +155,7 @@
 
         <div class="experience-list">
           
-          <div class="experience-row">
+          <div class="experience-row reveal-child">
             <div class="exp-year">2023 — Sekarang</div>
             <div class="exp-content">
               <h3 class="exp-title">Fotografer Independen</h3>
@@ -121,7 +166,7 @@
             </div>
           </div>
 
-          <div class="experience-row">
+          <div class="experience-row reveal-child" style="--delay: 0.08s">
             <div class="exp-year">2021 — 2023</div>
             <div class="exp-content">
               <h3 class="exp-title">Fotografer Editorial & Mode</h3>
@@ -132,7 +177,7 @@
             </div>
           </div>
 
-          <div class="experience-row">
+          <div class="experience-row reveal-child" style="--delay: 0.16s">
             <div class="exp-year">2019 — 2021</div>
             <div class="exp-content">
               <h3 class="exp-title">Fotografer Korporat & Acara</h3>
@@ -143,7 +188,7 @@
             </div>
           </div>
 
-          <div class="experience-row">
+          <div class="experience-row reveal-child" style="--delay: 0.24s">
             <div class="exp-year">2017 — 2019</div>
             <div class="exp-content">
               <h3 class="exp-title">Asisten Studio & Retoucher</h3>
@@ -156,8 +201,8 @@
 
         </div>
 
-        <!-- Kolaborator & Klien -->
-        <div class="clients-section">
+        <!-- Klien -->
+        <div class="clients-section reveal-child" style="--delay: 0.1s">
           <span class="clients-label">Pernah bekerjasama dengan kawan-kawan dari:</span>
           <p class="clients-list">
             Bank Mandiri, Tokopedia, Telkomsel, Samsung Indonesia, Plataran, Harper's Bazaar ID, Ismaya, dan studio-studio kreatif independen di Jakarta & Bali.
@@ -166,8 +211,8 @@
       </div>
     </section>
 
-    <!-- 3. PORTOFOLIO KARYA FOTO -->
-    <section class="section works-section" id="works">
+    <!-- 3. KARYA FOTO -->
+    <section class="section works-section reveal" id="works">
       <div class="container">
         <div class="works-header">
           <div>
@@ -175,7 +220,7 @@
             <h2 class="section-title">Karya Pilihan</h2>
           </div>
 
-          <!-- Filter Kategori Simpel -->
+          <!-- Filter -->
           <div class="filter-bar" id="filterBar">
             <button class="filter-btn active" data-filter="all">Semua</button>
             <button class="filter-btn" data-filter="commercial">Komersial</button>
@@ -190,11 +235,10 @@
           
           <article class="work-item" data-category="commercial" data-id="1">
             <div class="work-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=85" 
-                alt="The Silk Elegance" 
-                loading="lazy"
-              >
+              <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=85" alt="The Silk Elegance" loading="lazy">
+              <div class="work-overlay">
+                <span class="overlay-label">Lihat</span>
+              </div>
             </div>
             <div class="work-caption">
               <div class="work-title">The Silk Elegance</div>
@@ -204,11 +248,10 @@
 
           <article class="work-item work-tall" data-category="architecture" data-id="2">
             <div class="work-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85" 
-                alt="Monolith No. IV" 
-                loading="lazy"
-              >
+              <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85" alt="Monolith No. IV" loading="lazy">
+              <div class="work-overlay">
+                <span class="overlay-label">Lihat</span>
+              </div>
             </div>
             <div class="work-caption">
               <div class="work-title">Monolith No. IV</div>
@@ -218,11 +261,10 @@
 
           <article class="work-item" data-category="portrait" data-id="3">
             <div class="work-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85" 
-                alt="Portrait di Senopati" 
-                loading="lazy"
-              >
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85" alt="Portrait di Senopati" loading="lazy">
+              <div class="work-overlay">
+                <span class="overlay-label">Lihat</span>
+              </div>
             </div>
             <div class="work-caption">
               <div class="work-title">Senopati Portrait Series</div>
@@ -232,11 +274,10 @@
 
           <article class="work-item work-wide" data-category="editorial" data-id="4">
             <div class="work-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85" 
-                alt="Chroma & Form" 
-                loading="lazy"
-              >
+              <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85" alt="Chroma & Form" loading="lazy">
+              <div class="work-overlay">
+                <span class="overlay-label">Lihat</span>
+              </div>
             </div>
             <div class="work-caption">
               <div class="work-title">Chroma & Form</div>
@@ -246,11 +287,10 @@
 
           <article class="work-item" data-category="commercial" data-id="5">
             <div class="work-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85" 
-                alt="Resort Campaign" 
-                loading="lazy"
-              >
+              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85" alt="Resort Campaign" loading="lazy">
+              <div class="work-overlay">
+                <span class="overlay-label">Lihat</span>
+              </div>
             </div>
             <div class="work-caption">
               <div class="work-title">Resort Story</div>
@@ -260,11 +300,10 @@
 
           <article class="work-item" data-category="architecture" data-id="6">
             <div class="work-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85" 
-                alt="Sudirman Horizon" 
-                loading="lazy"
-              >
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85" alt="Sudirman Horizon" loading="lazy">
+              <div class="work-overlay">
+                <span class="overlay-label">Lihat</span>
+              </div>
             </div>
             <div class="work-caption">
               <div class="work-title">Sudirman Horizon</div>
@@ -274,11 +313,10 @@
 
           <article class="work-item work-tall" data-category="portrait" data-id="7">
             <div class="work-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=85" 
-                alt="The Architect" 
-                loading="lazy"
-              >
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=85" alt="The Architect" loading="lazy">
+              <div class="work-overlay">
+                <span class="overlay-label">Lihat</span>
+              </div>
             </div>
             <div class="work-caption">
               <div class="work-title">The Architect</div>
@@ -288,11 +326,10 @@
 
           <article class="work-item" data-category="editorial" data-id="8">
             <div class="work-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=85" 
-                alt="Golden Hour Fabric" 
-                loading="lazy"
-              >
+              <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=85" alt="Golden Hour Fabric" loading="lazy">
+              <div class="work-overlay">
+                <span class="overlay-label">Lihat</span>
+              </div>
             </div>
             <div class="work-caption">
               <div class="work-title">Golden Hour Fabric</div>
@@ -302,11 +339,10 @@
 
           <article class="work-item" data-category="architecture" data-id="9">
             <div class="work-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=85" 
-                alt="Spiral Geometry" 
-                loading="lazy"
-              >
+              <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=85" alt="Spiral Geometry" loading="lazy">
+              <div class="work-overlay">
+                <span class="overlay-label">Lihat</span>
+              </div>
             </div>
             <div class="work-caption">
               <div class="work-title">Spiral Geometry</div>
@@ -316,11 +352,10 @@
 
           <article class="work-item" data-category="commercial" data-id="10">
             <div class="work-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85" 
-                alt="Coastal Outdoor" 
-                loading="lazy"
-              >
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85" alt="Coastal Outdoor" loading="lazy">
+              <div class="work-overlay">
+                <span class="overlay-label">Lihat</span>
+              </div>
             </div>
             <div class="work-caption">
               <div class="work-title">Coastal Outdoor Series</div>
@@ -330,11 +365,10 @@
 
           <article class="work-item" data-category="portrait" data-id="11">
             <div class="work-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=85" 
-                alt="Window Light" 
-                loading="lazy"
-              >
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=85" alt="Window Light" loading="lazy">
+              <div class="work-overlay">
+                <span class="overlay-label">Lihat</span>
+              </div>
             </div>
             <div class="work-caption">
               <div class="work-title">Window Light Study</div>
@@ -344,11 +378,10 @@
 
           <article class="work-item" data-category="editorial" data-id="12">
             <div class="work-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=85" 
-                alt="Kintamani Morning" 
-                loading="lazy"
-              >
+              <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=85" alt="Kintamani Morning" loading="lazy">
+              <div class="work-overlay">
+                <span class="overlay-label">Lihat</span>
+              </div>
             </div>
             <div class="work-caption">
               <div class="work-title">Kintamani Morning</div>
@@ -360,8 +393,8 @@
       </div>
     </section>
 
-    <!-- 4. PERALATAN (SEDERHANA & NYATA) -->
-    <section class="section gear-section" id="gear">
+    <!-- 4. PERALATAN -->
+    <section class="section gear-section reveal" id="gear">
       <div class="container">
         <div class="section-head">
           <span class="section-label">Peralatan</span>
@@ -372,19 +405,19 @@
         </div>
 
         <div class="gear-list">
-          <div class="gear-row">
+          <div class="gear-row reveal-child">
             <div class="gear-cat">Kamera Utama</div>
             <div class="gear-items">Sony Alpha 1 & Hasselblad X2D 100C</div>
           </div>
-          <div class="gear-row">
+          <div class="gear-row reveal-child" style="--delay: 0.06s">
             <div class="gear-cat">Lensa Pilihan</div>
             <div class="gear-items">Sony FE 24-70mm f/2.8 GM II, 85mm f/1.4 GM, 50mm f/1.2 GM, 16-35mm f/2.8 GM II</div>
           </div>
-          <div class="gear-row">
+          <div class="gear-row reveal-child" style="--delay: 0.12s">
             <div class="gear-cat">Tata Cahaya</div>
             <div class="gear-items">Profoto B10X Plus (Strobe), modifier Octa 120, Beauty Dish, Reflector kit</div>
           </div>
-          <div class="gear-row">
+          <div class="gear-row reveal-child" style="--delay: 0.18s">
             <div class="gear-cat">Digital & Grading</div>
             <div class="gear-items">Capture One Pro, MacBook Pro M-Series untuk live tethering langsung di lokasi</div>
           </div>
@@ -392,8 +425,8 @@
       </div>
     </section>
 
-    <!-- 5. KONTAK (SEDERHANA, JELAS, TANPA EMBEL-EMBEL) -->
-    <section class="section contact-section" id="contact">
+    <!-- 5. KONTAK -->
+    <section class="section contact-section reveal" id="contact">
       <div class="container">
         <div class="contact-box">
           <span class="section-label">Mari Berdiskusi</span>
@@ -413,7 +446,7 @@
             </a>
           </div>
 
-          <!-- Form Sederhana -->
+          <!-- Form -->
           <div class="form-wrapper">
             <form id="contactForm" class="simple-form" novalidate>
               <div class="input-row">
@@ -429,7 +462,7 @@
     </section>
   </main>
 
-  <!-- LIGHTBOX SEDERHANA -->
+  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox-overlay" id="lightboxOverlay"></div>
     <div class="lightbox-content">
@@ -442,7 +475,7 @@
     </div>
   </div>
 
-  <!-- TOAST SEDERHANA -->
+  <!-- TOAST -->
   <div class="toast" id="toast">Pesan berhasil dikirim.</div>
 
   <!-- FOOTER -->
