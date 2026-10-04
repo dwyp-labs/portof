@@ -1,5 +1,5 @@
 /**
- * KRESNA DANUARTA — PHOTOGRAPHER PORTFOLIO
+ * KRESNA Dwipa — PORTFOLIO
  * Interactive behaviors: nav indicator, theme toggle, mobile drawer,
  * scroll reveal, gallery filter, lightbox, and contact form.
  */
