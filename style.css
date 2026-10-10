@@ -930,7 +930,8 @@ img {
 .works-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.8rem;
+  gap: 1.5rem;
+  align-items: start;
 }
 
 .work-item {
@@ -940,30 +941,44 @@ img {
   border: 1px solid var(--border-glass);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-radius: 24px;
+  border-radius: 20px;
   box-shadow: var(--shadow-glass);
-  transition: all 0.45s var(--ease-spring);
+  transition: transform 0.4s var(--ease-spring), border-color 0.3s ease, box-shadow 0.4s ease;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .work-item::before {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 24px;
+  border-radius: 19px;
   background: var(--glass-specular-soft);
   pointer-events: none;
+  z-index: 1;
 }
 
 .work-item:hover {
-  transform: translateY(-6px) scale(1.015);
+  transform: translateY(-6px);
   border-color: var(--border-glass-glow);
   box-shadow: var(--shadow-glass-hover);
 }
 
 .work-item.work-tall {
   grid-row: span 2;
+  height: 100%;
+}
+
+.work-item.work-tall .work-img-box {
+  flex: 1;
+  display: flex;
+}
+
+.work-item.work-tall .work-img-box img {
+  height: 100%;
+  min-height: 520px;
 }
 
 .work-item.work-wide {
@@ -977,26 +992,23 @@ img {
 .work-img-box {
   position: relative;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 12px;
   background: var(--bg-subtle);
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.75rem;
 }
 
 .work-img-box img {
   width: 100%;
   height: 380px;
   object-fit: cover;
-  border-radius: 18px;
-  transition: transform 0.8s var(--ease-out), filter 0.5s ease;
-}
-
-.work-tall .work-img-box img {
-  height: 600px;
+  border-radius: 12px;
+  transition: transform 0.7s var(--ease-out), filter 0.5s ease;
+  will-change: transform;
 }
 
 .work-item:hover .work-img-box img {
-  transform: scale(1.06);
-  filter: brightness(0.82) saturate(1.1);
+  transform: scale(1.05);
+  filter: brightness(0.85) saturate(1.08);
 }
 
 /* Hover overlay on gallery — Liquid Glass Pill button */
@@ -1010,9 +1022,9 @@ img {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, transparent 80%);
-  transition: opacity 0.4s ease;
-  z-index: 2;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.1) 80%);
+  transition: opacity 0.35s ease;
+  z-index: 3;
   pointer-events: none;
 }
 
@@ -1024,19 +1036,19 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.7rem 1.6rem;
+  padding: 0.65rem 1.5rem;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(16px) saturate(1.8);
   -webkit-backdrop-filter: blur(16px) saturate(1.8);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.7);
   border-radius: 30px;
   color: #ffffff;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   transform: translateY(10px) scale(0.95);
-  transition: transform 0.4s var(--ease-spring);
+  transition: transform 0.35s var(--ease-spring);
 }
 
 .work-item:hover .overlay-label {
@@ -1044,7 +1056,9 @@ img {
 }
 
 .work-caption {
-  padding: 0.2rem 0.4rem;
+  padding: 0.2rem 0.3rem 0.1rem;
+  position: relative;
+  z-index: 2;
 }
 
 .work-title {
@@ -1060,6 +1074,19 @@ img {
   font-size: 0.8rem;
   color: var(--text-muted);
   transition: color 0.3s ease;
+}
+
+/* Keyframe for filter animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* ==========================================================================
