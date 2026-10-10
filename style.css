@@ -8,22 +8,22 @@
 :root,
 [data-theme="dark"] {
   --bg: #09090b;
-  --bg-surface: rgba(22, 22, 28, 0.55);
-  --bg-subtle: rgba(30, 30, 38, 0.45);
-  --bg-elevated: rgba(38, 38, 48, 0.65);
+  --bg-surface: rgba(18, 18, 22, 0.75);
+  --bg-subtle: rgba(24, 24, 30, 0.65);
+  --bg-elevated: rgba(30, 30, 38, 0.82);
 
-  --header-bg: rgba(12, 12, 16, 0.6);
-  --dock-bg: rgba(22, 22, 30, 0.45);
+  --header-bg: rgba(9, 9, 11, 0.78);
+  --dock-bg: rgba(18, 18, 24, 0.7);
   --indicator-bg: rgba(255, 255, 255, 0.12);
 
   /* Liquid Glass Specular Borders & Highlights */
   --border: rgba(255, 255, 255, 0.08);
-  --border-glass: rgba(255, 255, 255, 0.14);
-  --border-glass-glow: rgba(255, 255, 255, 0.28);
-  --border-hover: rgba(255, 255, 255, 0.25);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-glass-glow: rgba(255, 255, 255, 0.24);
+  --border-hover: rgba(255, 255, 255, 0.22);
 
-  --glass-specular: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.03) 40%, rgba(255, 255, 255, 0.01) 100%);
-  --glass-specular-soft: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 60%);
+  --glass-specular: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 40%, rgba(255, 255, 255, 0) 100%);
+  --glass-specular-soft: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.01) 60%);
 
   --text-main: #f5f5f7;
   --text-body: #a1a1aa;
@@ -35,27 +35,27 @@
   --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.25);
   --shadow-md: 0 12px 36px rgba(0, 0, 0, 0.35);
   --shadow-lg: 0 24px 70px rgba(0, 0, 0, 0.5);
-  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
-  --shadow-glass-hover: 0 16px 48px 0 rgba(0, 0, 0, 0.45), inset 0 1px 2px 0 rgba(255, 255, 255, 0.3);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
+  --shadow-glass-hover: 0 16px 48px 0 rgba(0, 0, 0, 0.45), inset 0 1px 2px 0 rgba(255, 255, 255, 0.22);
 }
 
 [data-theme="light"] {
   --bg: #f5f6fa;
-  --bg-surface: rgba(255, 255, 255, 0.65);
-  --bg-subtle: rgba(240, 242, 248, 0.6);
-  --bg-elevated: rgba(255, 255, 255, 0.85);
+  --bg-surface: rgba(255, 255, 255, 0.82);
+  --bg-subtle: rgba(245, 246, 250, 0.8);
+  --bg-elevated: rgba(255, 255, 255, 0.94);
 
-  --header-bg: rgba(245, 246, 250, 0.68);
-  --dock-bg: rgba(255, 255, 255, 0.6);
+  --header-bg: rgba(245, 246, 250, 0.85);
+  --dock-bg: rgba(255, 255, 255, 0.82);
   --indicator-bg: #ffffff;
 
   --border: rgba(0, 0, 0, 0.06);
-  --border-glass: rgba(255, 255, 255, 0.65);
-  --border-glass-glow: rgba(255, 255, 255, 0.9);
+  --border-glass: rgba(255, 255, 255, 0.8);
+  --border-glass-glow: rgba(255, 255, 255, 0.95);
   --border-hover: rgba(0, 0, 0, 0.14);
 
-  --glass-specular: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.05) 100%);
-  --glass-specular-soft: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.15) 70%);
+  --glass-specular: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 100%);
+  --glass-specular-soft: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.08) 70%);
 
   --text-main: #141419;
   --text-body: #52525c;
@@ -67,8 +67,8 @@
   --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.12);
-  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
-  --shadow-glass-hover: 0 16px 40px 0 rgba(31, 38, 135, 0.12), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.05), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
+  --shadow-glass-hover: 0 16px 40px 0 rgba(31, 38, 135, 0.09), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
 }
 
 :root {
@@ -125,8 +125,8 @@ body {
 .liquid-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.45;
+  filter: blur(60px);
+  opacity: 0.22;
   mix-blend-mode: screen;
   will-change: transform;
   animation: floatOrb 22s ease-in-out infinite alternate;
@@ -134,34 +134,34 @@ body {
 
 [data-theme="light"] .liquid-orb {
   mix-blend-mode: multiply;
-  opacity: 0.35;
-  filter: blur(80px);
+  opacity: 0.16;
+  filter: blur(55px);
 }
 
 .liquid-orb-1 {
-  width: 550px;
-  height: 550px;
-  top: -10%;
+  width: 440px;
+  height: 440px;
+  top: -8%;
   left: 15%;
-  background: radial-gradient(circle, rgba(224, 185, 133, 0.45) 0%, rgba(200, 140, 80, 0.15) 50%, transparent 75%);
+  background: radial-gradient(circle, rgba(224, 185, 133, 0.35) 0%, rgba(200, 140, 80, 0.08) 55%, transparent 75%);
 }
 
 .liquid-orb-2 {
-  width: 650px;
-  height: 650px;
+  width: 480px;
+  height: 480px;
   top: 35%;
-  right: -10%;
-  background: radial-gradient(circle, rgba(140, 110, 220, 0.35) 0%, rgba(90, 120, 240, 0.1) 60%, transparent 80%);
+  right: -5%;
+  background: radial-gradient(circle, rgba(140, 110, 220, 0.25) 0%, rgba(90, 120, 240, 0.06) 60%, transparent 80%);
   animation-duration: 28s;
   animation-delay: -7s;
 }
 
 .liquid-orb-3 {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   bottom: 5%;
   left: 5%;
-  background: radial-gradient(circle, rgba(70, 180, 200, 0.3) 0%, rgba(224, 185, 133, 0.15) 50%, transparent 75%);
+  background: radial-gradient(circle, rgba(70, 180, 200, 0.2) 0%, rgba(224, 185, 133, 0.08) 50%, transparent 75%);
   animation-duration: 25s;
   animation-delay: -14s;
 }
@@ -169,13 +169,13 @@ body {
 .liquid-grid-overlay {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 32px 32px;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 [data-theme="light"] .liquid-grid-overlay {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px);
 }
 
 @keyframes floatOrb {
